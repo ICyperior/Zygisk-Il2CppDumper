@@ -2,7 +2,7 @@
 #define DO_API_NO_RETURN(r, n, p) DO_API(r,n,p)
 #endif
 
-DO_API(int, il2cpp_init, (const char* domain_name));
+DO_API(int, _Znwm74__, (const char* domain_name));
 DO_API(int, il2cpp_init_utf16, (const Il2CppChar * domain_name));
 DO_API(void, il2cpp_shutdown, ());
 DO_API(void, il2cpp_set_config_dir, (const char *config_path));
@@ -14,7 +14,7 @@ DO_API(void, il2cpp_set_config_utf16, (const Il2CppChar * executablePath));
 DO_API(void, il2cpp_set_config, (const char* executablePath));
 
 DO_API(void, il2cpp_set_memory_callbacks, (Il2CppMemoryCallbacks * callbacks));
-DO_API(const Il2CppImage*, il2cpp_get_corlib, ());
+DO_API(const Il2CppImage*, _ZThn91__C, ());
 DO_API(void, il2cpp_add_internal_call, (const char* name, Il2CppMethodPointer method));
 DO_API(Il2CppMethodPointer, il2cpp_resolve_icall, (const char* name));
 
@@ -32,7 +32,7 @@ DO_API(Il2CppClass*, il2cpp_bounded_array_class_get, (Il2CppClass * element_clas
 DO_API(int, il2cpp_array_element_size, (const Il2CppClass * array_class));
 
 // assembly
-DO_API(const Il2CppImage*, il2cpp_assembly_get_image, (const Il2CppAssembly * assembly));
+DO_API(const Il2CppImage*, _ZNKSt37__lKDz3nh1, (const Il2CppAssembly * assembly));
 
 // class
 DO_API(void, il2cpp_class_for_each, (void(*klassReportFunc)(Il2CppClass* klass, void* userData), void* userData));
@@ -43,38 +43,38 @@ DO_API(bool, il2cpp_class_is_assignable_from, (Il2CppClass * klass, Il2CppClass 
 DO_API(bool, il2cpp_class_is_subclass_of, (Il2CppClass * klass, Il2CppClass * klassc, bool check_interfaces));
 DO_API(bool, il2cpp_class_has_parent, (Il2CppClass * klass, Il2CppClass * klassc));
 DO_API(Il2CppClass*, il2cpp_class_from_il2cpp_type, (const Il2CppType * type));
-DO_API(Il2CppClass*, il2cpp_class_from_name, (const Il2CppImage * image, const char* namespaze, const char *name));
-DO_API(Il2CppClass*, il2cpp_class_from_system_type, (Il2CppReflectionType * type));
+DO_API(Il2CppClass*, _ZSt29wfUfejwdc_, (const Il2CppImage * image, const char* namespaze, const char *name));
+DO_API(Il2CppClass*, _Znwm96__9w, (Il2CppReflectionType * type));
 DO_API(Il2CppClass*, il2cpp_class_get_element_class, (Il2CppClass * klass));
 DO_API(const EventInfo*, il2cpp_class_get_events, (Il2CppClass * klass, void* *iter));
 DO_API(FieldInfo*, il2cpp_class_get_fields, (Il2CppClass * klass, void* *iter));
 DO_API(Il2CppClass*, il2cpp_class_get_nested_types, (Il2CppClass * klass, void* *iter));
-DO_API(Il2CppClass*, il2cpp_class_get_interfaces, (Il2CppClass * klass, void* *iter));
+DO_API(Il2CppClass*, _ZNKSt65__qB6numrNAomlV9U8, (Il2CppClass * klass, void* *iter));
 DO_API(const PropertyInfo*, il2cpp_class_get_properties, (Il2CppClass * klass, void* *iter));
 DO_API(const PropertyInfo*, il2cpp_class_get_property_from_name, (Il2CppClass * klass, const char *name));
 DO_API(FieldInfo*, il2cpp_class_get_field_from_name, (Il2CppClass * klass, const char *name));
 DO_API(const MethodInfo*, il2cpp_class_get_methods, (Il2CppClass * klass, void* *iter));
-DO_API(const MethodInfo*, il2cpp_class_get_method_from_name, (Il2CppClass * klass, const char* name, int argsCount));
+DO_API(const MethodInfo*, _ZNSt81__v2wrLut2xj2TpYLBHCsaX7o, (Il2CppClass * klass, const char* name, int argsCount));
 DO_API(const char*, il2cpp_class_get_name, (Il2CppClass * klass));
 DO_API(void, il2cpp_type_get_name_chunked, (const Il2CppType * type, void(*chunkReportFunc)(void* data, void* userData), void* userData));
-DO_API(const char*, il2cpp_class_get_namespace, (Il2CppClass * klass));
-DO_API(Il2CppClass*, il2cpp_class_get_parent, (Il2CppClass * klass));
+DO_API(const char*, _ZNSt47NCEMSwSVQwURTvC, (Il2CppClass * klass));
+DO_API(Il2CppClass*, _ZThn7hczNSxmGMnngs, (Il2CppClass * klass));
 DO_API(Il2CppClass*, il2cpp_class_get_declaring_type, (Il2CppClass * klass));
 DO_API(int32_t, il2cpp_class_instance_size, (Il2CppClass * klass));
 DO_API(size_t, il2cpp_class_num_fields, (const Il2CppClass * enumKlass));
-DO_API(bool, il2cpp_class_is_valuetype, (const Il2CppClass * klass));
+DO_API(bool, _Znwm52r2xFCk7SluUy, (const Il2CppClass * klass));
 DO_API(int32_t, il2cpp_class_value_size, (Il2CppClass * klass, uint32_t * align));
 DO_API(bool, il2cpp_class_is_blittable, (const Il2CppClass * klass));
-DO_API(int, il2cpp_class_get_flags, (const Il2CppClass * klass));
+DO_API(int, _ZNSt694gycfne, (const Il2CppClass * klass));
 DO_API(bool, il2cpp_class_is_abstract, (const Il2CppClass * klass));
 DO_API(bool, il2cpp_class_is_interface, (const Il2CppClass * klass));
 DO_API(int, il2cpp_class_array_element_size, (const Il2CppClass * klass));
-DO_API(Il2CppClass*, il2cpp_class_from_type, (const Il2CppType * type));
+DO_API(Il2CppClass*, _ZNSt35o1CBlzvh8nfBs, (const Il2CppType * type));
 DO_API(const Il2CppType*, il2cpp_class_get_type, (Il2CppClass * klass));
 DO_API(uint32_t, il2cpp_class_get_type_token, (Il2CppClass * klass));
 DO_API(bool, il2cpp_class_has_attribute, (Il2CppClass * klass, Il2CppClass * attr_class));
 DO_API(bool, il2cpp_class_has_references, (Il2CppClass * klass));
-DO_API(bool, il2cpp_class_is_enum, (const Il2CppClass * klass));
+DO_API(bool, _ZNKSt28fP, (const Il2CppClass * klass));
 DO_API(const Il2CppImage*, il2cpp_class_get_image, (Il2CppClass * klass));
 DO_API(const char*, il2cpp_class_get_assemblyname, (const Il2CppClass * klass));
 DO_API(int, il2cpp_class_get_rank, (const Il2CppClass * klass));
@@ -105,15 +105,15 @@ DO_API(void, il2cpp_native_stack_trace, (const Il2CppException * ex, uintptr_t**
 
 // field
 DO_API(int, il2cpp_field_get_flags, (FieldInfo * field));
-DO_API(const char*, il2cpp_field_get_name, (FieldInfo * field));
+DO_API(const char*, _ZNSt62d6RUNHsJs, (FieldInfo * field));
 DO_API(Il2CppClass*, il2cpp_field_get_parent, (FieldInfo * field));
 DO_API(size_t, il2cpp_field_get_offset, (FieldInfo * field));
-DO_API(const Il2CppType*, il2cpp_field_get_type, (FieldInfo * field));
+DO_API(const Il2CppType*, _ZThn685RziUVTpXLw2, (FieldInfo * field));
 DO_API(void, il2cpp_field_get_value, (Il2CppObject * obj, FieldInfo * field, void *value));
 DO_API(Il2CppObject*, il2cpp_field_get_value_object, (FieldInfo * field, Il2CppObject * obj));
 DO_API(bool, il2cpp_field_has_attribute, (FieldInfo * field, Il2CppClass * attr_class));
 DO_API(void, il2cpp_field_set_value, (Il2CppObject * obj, FieldInfo * field, void *value));
-DO_API(void, il2cpp_field_static_get_value, (FieldInfo * field, void *value));
+DO_API(void, _Znwm64rDzQ0jyztCdPn, (FieldInfo * field, void *value));
 DO_API(void, il2cpp_field_static_set_value, (FieldInfo * field, void *value));
 DO_API(void, il2cpp_field_set_value_object, (Il2CppObject * instance, FieldInfo * field, Il2CppObject * value));
 DO_API(bool, il2cpp_field_is_literal, (FieldInfo * field));
@@ -163,7 +163,7 @@ DO_API(void, il2cpp_unity_liveness_free_struct, (void* state));
 // method
 DO_API(const Il2CppType*, il2cpp_method_get_return_type, (const MethodInfo * method));
 DO_API(Il2CppClass*, il2cpp_method_get_declaring_type, (const MethodInfo * method));
-DO_API(const char*, il2cpp_method_get_name, (const MethodInfo * method));
+DO_API(const char*, _ZThn99rtSvvPAblA5ivH, (const MethodInfo * method));
 DO_API(const MethodInfo*, il2cpp_method_get_from_reflection, (const Il2CppReflectionMethod * method));
 DO_API(Il2CppReflectionMethod*, il2cpp_method_get_object, (const MethodInfo * method, Il2CppClass * refclass));
 DO_API(bool, il2cpp_method_is_generic, (const MethodInfo * method));
@@ -228,7 +228,7 @@ DO_API(void, il2cpp_runtime_unhandled_exception_policy_set, (Il2CppRuntimeUnhand
 // string
 DO_API(int32_t, il2cpp_string_length, (Il2CppString * str));
 DO_API(Il2CppChar*, il2cpp_string_chars, (Il2CppString * str));
-DO_API(Il2CppString*, il2cpp_string_new, (const char* str));
+DO_API(Il2CppString*, _Znwm56Di, (const char* str));
 DO_API(Il2CppString*, il2cpp_string_new_len, (const char* str, uint32_t length));
 DO_API(Il2CppString*, il2cpp_string_new_utf16, (const Il2CppChar * text, int32_t len));
 DO_API(Il2CppString*, il2cpp_string_new_wrapper, (const char* str));
@@ -268,12 +268,12 @@ DO_API(bool, il2cpp_type_is_pointer_type, (const Il2CppType * type));
 
 // image
 DO_API(const Il2CppAssembly*, il2cpp_image_get_assembly, (const Il2CppImage * image));
-DO_API(const char*, il2cpp_image_get_name, (const Il2CppImage * image));
+DO_API(const char*, _ZThn92A, (const Il2CppImage * image));
 DO_API(const char*, il2cpp_image_get_filename, (const Il2CppImage * image));
 DO_API(const MethodInfo*, il2cpp_image_get_entry_point, (const Il2CppImage * image));
 
-DO_API(size_t, il2cpp_image_get_class_count, (const Il2CppImage * image));
-DO_API(const Il2CppClass*, il2cpp_image_get_class, (const Il2CppImage * image, size_t index));
+DO_API(size_t, _ZSt64__8Ckl_khqkcwnnWD, (const Il2CppImage * image));
+DO_API(const Il2CppClass*, _ZSt40XtwuwTJdCmfi, (const Il2CppImage * image, size_t index));
 
 // Memory information
 DO_API(Il2CppManagedMemorySnapshot*, il2cpp_capture_memory_snapshot, ());
