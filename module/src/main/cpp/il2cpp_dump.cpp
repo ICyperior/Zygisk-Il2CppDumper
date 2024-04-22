@@ -38,6 +38,29 @@ void init_il2cpp_api(void *handle) {
 #undef DO_API
 }
 
+#define il2cpp_init _Znwm74__
+#define il2cpp_method_get_name _ZThn99rtSvvPAblA5ivH
+#define il2cpp_field_get_type _ZThn685RziUVTpXLw2
+#define il2cpp_field_get_name _ZNSt62d6RUNHsJs
+#define il2cpp_field_static_get_value _Znwm64rDzQ0jyztCdPn
+#define il2cpp_class_from_type _ZNSt35o1CBlzvh8nfBs
+#define il2cpp_class_get_namespace _ZNSt47NCEMSwSVQwURTvC
+#define il2cpp_class_get_flags _ZNSt694gycfne
+#define il2cpp_class_is_valuetype _Znwm52r2xFCk7SluUy
+#define il2cpp_class_is_enum _ZNKSt28fP
+#define il2cpp_class_get_parent _ZThn7hczNSxmGMnngs
+#define il2cpp_class_get_interfaces _ZNKSt65__qB6numrNAomlV9U8
+#define il2cpp_get_corlib _ZThn91__C
+#define il2cpp_class_from_name _ZSt29wfUfejwdc_
+#define il2cpp_class_get_method_from_name _ZNSt81__v2wrLut2xj2TpYLBHCsaX7o
+#define il2cpp_assembly_get_image _ZNKSt37__lKDz3nh1
+#define il2cpp_image_get_name _ZThn92A
+#define il2cpp_image_get_class_count _ZSt64__8Ckl_khqkcwnnWD
+#define il2cpp_image_get_class _ZSt40XtwuwTJdCmfi
+#define il2cpp_string_new _Znwm56Di
+#define il2cpp_class_from_system_type _Znwm96__9w
+
+
 std::string get_method_modifier(uint32_t flags) {
     std::stringstream outPut;
     auto access = flags & METHOD_ATTRIBUTE_MEMBER_ACCESS_MASK;
