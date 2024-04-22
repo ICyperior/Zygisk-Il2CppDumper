@@ -25,10 +25,9 @@
 
 static uint64_t il2cpp_base = 0;
 
-// Macro pour initialiser les pointeurs de fonctions
+void init_il2cpp_api(void *handle) {
 #define DO_API(r, n, p) {                      \
-    std::string real_name = api_name_map[#n];  \
-    n = (r (*) p)xdl_sym(handle, real_name.c_str(), nullptr); \
+    n = (r (*) p)xdl_sym(handle, #n, nullptr); \
     if(!n) {                                   \
         LOGW("api not found %s", #n);          \
     }                                          \
