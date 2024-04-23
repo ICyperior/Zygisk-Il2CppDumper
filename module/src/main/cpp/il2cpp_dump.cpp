@@ -108,11 +108,12 @@ std::string get_method_modifier(uint32_t flags) {
 }
 
 bool _il2cpp_type_is_byref(const Il2CppType *type) {
-    auto byref = type->byref;
-    if (il2cpp_type_is_byref) {
-        byref = il2cpp_type_is_byref(type);
-    }
-    return byref;
+    //auto byref = type->byref;
+    //if (il2cpp_type_is_byref) {
+    //    byref = il2cpp_type_is_byref(type);
+    //}
+    //return byref;
+    return false;
 }
 
 std::string dump_method(Il2CppClass *klass) {
