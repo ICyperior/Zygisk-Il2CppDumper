@@ -2,6 +2,7 @@
 #define DO_API_NO_RETURN(r, n, p) DO_API(r,n,p)
 #endif
 
+// Real name to modified name conversions macros
 #define il2cpp_class_get_fields _Znwm2hYwfujqYskrgugh
 #define il2cpp_class_get_methods _ZNKSt61__9Iyfwcxjrd2m
 #define il2cpp_method_get_param _ZThn73TTr
@@ -15,8 +16,14 @@
 #define il2cpp_field_get_offset _Znwm84__FJffUr
 #define il2cpp_class_get_name _ZSt664ng8BcrLoHD
 #define il2cpp_is_vm_thread _ZNSt45zFeGW
-#define il2cpp_domain_get _ZSt11hcEXbjEqget      // Removed std::
+#define il2cpp_domain_get _ZSt11hcEXbjEqget
 #define il2cpp_domain_get_assemblies _ZNKSt41brqNPbggAzk8RuswumT
+#define il2cpp_method_get_return_type _Znwm64nfNbTOJU6wspZ	
+#define il2cpp_method_get_param_count _ZThn68__ikU5X0xBpMsrh
+#define il2cpp_method_get_flags _ZSt4__h5cgzIj2cj	
+#define il2cpp_class_get_type _ZNSt72	
+#define il2cpp_thread_attach _Znwm27vHddCzmNzdmn
+
 
 DO_API(int, _Znwm74__, (const char* domain_name));
 
@@ -51,6 +58,7 @@ DO_API(const char*, _ZNSt62d6RUNHsJs, (FieldInfo * field));
 DO_API(size_t, _Znwm84__FJffUr, (FieldInfo * field));
 DO_API(const Il2CppType*, _ZThn685RziUVTpXLw2, (FieldInfo * field));
 DO_API(void, _Znwm64rDzQ0jyztCdPn, (FieldInfo * field, void *value));
+DO_API(void, _Znwm10__ziO2E, (FieldInfo * field, void *value));
 
 // method
 DO_API(const char*, _ZThn99rtSvvPAblA5ivH, (const MethodInfo * method));
@@ -68,3 +76,10 @@ DO_API(bool, _ZNSt45zFeGW, (Il2CppThread * thread));
 DO_API(const char*, _ZThn92A, (const Il2CppImage * image));
 DO_API(size_t, _ZSt64__8Ckl_khqkcwnnWD, (const Il2CppImage * image));
 DO_API(const Il2CppClass*, _ZSt40XtwuwTJdCmfi, (const Il2CppImage * image, size_t index));
+
+// Shit i forgot
+DO_API(const Il2CppType*, _Znwm64nfNbTOJU6wspZ, (const MethodInfo * method));
+DO_API(uint32_t, _ZThn68__ikU5X0xBpMsrh, (const MethodInfo * method));
+DO_API(uint32_t, _ZSt4__h5cgzIj2cj, (const MethodInfo * method, uint32_t * iflags));
+DO_API(const Il2CppType*, _ZNSt72, (Il2CppClass * klass));
+DO_API(Il2CppThread*, _Znwm27vHddCzmNzdmn, (Il2CppDomain * domain));
