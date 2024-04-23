@@ -2,6 +2,22 @@
 #define DO_API_NO_RETURN(r, n, p) DO_API(r,n,p)
 #endif
 
+#define il2cpp_class_get_fields _Znwm2hYwfujqYskrgugh
+#define il2cpp_class_get_methods _ZNKSt61__9Iyfwcxjrd2m
+#define il2cpp_method_get_param _ZThn73TTr
+#define il2cpp_method_get_param_name _ZNKSt627zZLdXcm78cx2
+#define il2cpp_class_get_properties _ZNKSt28__LOrUnxvproperties
+#define il2cpp_property_get_get_method _Znwm84nzkIg_E
+#define il2cpp_property_get_set_method _ZNSt23__xgrJxIqr_btq
+#define il2cpp_property_get_name _ZNSt19__EpRk0E
+#define il2cpp_field_get_flags _ZThn57__zhInNsR8d
+#define il2cpp_field_static_get_value _Znwm10__ziO2E
+#define il2cpp_field_get_offset _Znwm84__FJffUr
+#define il2cpp_class_get_name _ZSt664ng8BcrLoHD
+#define il2cpp_is_vm_thread _ZNSt45zFeGW
+#define il2cpp_domain_get std::hcEXbjEqget
+#define il2cpp_domain_get_assemblies _ZNKSt41brqNPbggAzk8RuswumT
+
 DO_API(int, _Znwm74__, (const char* domain_name));
 DO_API(int, il2cpp_init_utf16, (const Il2CppChar * domain_name));
 DO_API(void, il2cpp_shutdown, ());
