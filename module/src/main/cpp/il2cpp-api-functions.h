@@ -15,7 +15,7 @@
 #define il2cpp_field_get_offset _Znwm84__FJffUr
 #define il2cpp_class_get_name _ZSt664ng8BcrLoHD
 #define il2cpp_is_vm_thread _ZNSt45zFeGW
-#define il2cpp_domain_get shcEXbjEqget      // Removed std::
+// #define il2cpp_domain_get shcEXbjEqget      // Removed std::
 #define il2cpp_domain_get_assemblies _ZNKSt41brqNPbggAzk8RuswumT
 
 DO_API(int, _Znwm74__, (const char* domain_name));
