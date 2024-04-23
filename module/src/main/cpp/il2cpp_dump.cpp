@@ -59,6 +59,21 @@ void init_il2cpp_api(void *handle) {
 #define il2cpp_image_get_class _ZSt40XtwuwTJdCmfi
 #define il2cpp_string_new _Znwm56Di
 #define il2cpp_class_from_system_type _Znwm96__9w
+#define il2cpp_class_get_fields _Znwm2hYwfujqYskrgugh
+#define il2cpp_class_get_methods _ZNKSt61__9Iyfwcxjrd2m
+#define il2cpp_method_get_param _ZThn73TTr
+#define il2cpp_method_get_param_name _ZNKSt627zZLdXcm78cx2
+#define il2cpp_class_get_properties _ZNKSt28__LOrUnxvproperties
+#define il2cpp_property_get_get_method _Znwm84nzkIg_E
+#define il2cpp_property_get_set_method _ZNSt23__xgrJxIqr_btq
+#define il2cpp_property_get_name _ZNSt19__EpRk0E
+#define il2cpp_field_get_flags _ZThn57__zhInNsR8d
+#define il2cpp_field_static_get_value _Znwm10__ziO2E
+#define il2cpp_field_get_offset _Znwm84__FJffUr
+#define il2cpp_class_get_name _ZSt664ng8BcrLoHD
+#define il2cpp_is_vm_thread _ZNSt45zFeGW
+#define il2cpp_domain_get _ZSt11hcEXbjEqget      // Removed std::
+#define il2cpp_domain_get_assemblies _ZNKSt41brqNPbggAzk8RuswumT
 
 
 std::string get_method_modifier(uint32_t flags) {
