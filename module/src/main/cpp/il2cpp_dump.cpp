@@ -38,42 +38,7 @@ void init_il2cpp_api(void *handle) {
 #undef DO_API
 }
 
-#define il2cpp_init _Znwm74__
-#define il2cpp_method_get_name _ZThn99rtSvvPAblA5ivH
-#define il2cpp_field_get_type _ZThn685RziUVTpXLw2
-#define il2cpp_field_get_name _ZNSt62d6RUNHsJs
-#define il2cpp_field_static_get_value _Znwm64rDzQ0jyztCdPn
-#define il2cpp_class_from_type _ZNSt35o1CBlzvh8nfBs
-#define il2cpp_class_get_namespace _ZNSt47NCEMSwSVQwURTvC
-#define il2cpp_class_get_flags _ZNSt694gycfne
-#define il2cpp_class_is_valuetype _Znwm52r2xFCk7SluUy
-#define il2cpp_class_is_enum _ZNKSt28fP
-#define il2cpp_class_get_parent _ZThn7hczNSxmGMnngs
-#define il2cpp_class_get_interfaces _ZNKSt65__qB6numrNAomlV9U8
-#define il2cpp_get_corlib _ZThn91__C
-#define il2cpp_class_from_name _ZSt29wfUfejwdc_
-#define il2cpp_class_get_method_from_name _ZNSt81__v2wrLut2xj2TpYLBHCsaX7o
-#define il2cpp_assembly_get_image _ZNKSt37__lKDz3nh1
-#define il2cpp_image_get_name _ZThn92A
-#define il2cpp_image_get_class_count _ZSt64__8Ckl_khqkcwnnWD
-#define il2cpp_image_get_class _ZSt40XtwuwTJdCmfi
-#define il2cpp_string_new _Znwm56Di
-#define il2cpp_class_from_system_type _Znwm96__9w
-#define il2cpp_class_get_fields _Znwm2hYwfujqYskrgugh
-#define il2cpp_class_get_methods _ZNKSt61__9Iyfwcxjrd2m
-#define il2cpp_method_get_param _ZThn73TTr
-#define il2cpp_method_get_param_name _ZNKSt627zZLdXcm78cx2
-#define il2cpp_class_get_properties _ZNKSt28__LOrUnxvproperties
-#define il2cpp_property_get_get_method _Znwm84nzkIg_E
-#define il2cpp_property_get_set_method _ZNSt23__xgrJxIqr_btq
-#define il2cpp_property_get_name _ZNSt19__EpRk0E
-#define il2cpp_field_get_flags _ZThn57__zhInNsR8d
-#define il2cpp_field_static_get_value _Znwm10__ziO2E
-#define il2cpp_field_get_offset _Znwm84__FJffUr
-#define il2cpp_class_get_name _ZSt664ng8BcrLoHD
-#define il2cpp_is_vm_thread _ZNSt45zFeGW
-#define il2cpp_domain_get _ZSt11hcEXbjEqget      // Removed std::
-#define il2cpp_domain_get_assemblies _ZNKSt41brqNPbggAzk8RuswumT
+
 
 
 std::string get_method_modifier(uint32_t flags) {
