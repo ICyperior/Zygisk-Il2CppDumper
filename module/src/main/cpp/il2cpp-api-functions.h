@@ -3,27 +3,27 @@
 #endif
 
 // Real name to modified name conversions macros
-#define il2cpp_init : _Znwm74__
-#define il2cpp_method_get_name : _ZThn45y4cHVOdz9f
-#define il2cpp_field_get_type : _ZThn15__KwhtpU
-#define il2cpp_field_get_name : _ZNSt8__TJb6
-#define il2cpp_field_static_get_value : _Znwm10__ziO2E
-#define il2cpp_class_from_type : _ZNSt80vElMdyzdY
-#define il2cpp_class_get_namespace : _ZNSt92ugnYnvvTGa
-#define il2cpp_class_get_flags : _ZNSt15__J
-#define il2cpp_class_is_valuetype : _Znwm97__5GMQy
-#define il2cpp_class_is_enum : _ZNKSt74TutWKSw_ofD
-#define il2cpp_class_get_parent : _ZThn52nfOYnwnD
-#define il2cpp_class_get_interfaces : _ZNSt11__ygpypltLqtJa
-#define il2cpp_get_corlib : _ZThn38__
-#define il2cpp_class_from_name : _Znwm74dSes6
-#define il2cpp_class_get_method_from_name : _ZNSt28__7GdDgt3ZoVr8wpdH
-#define il2cpp_assembly_get_image : _ZNKSt82__rpm
-#define il2cpp_image_get_name : _ZNKSt38hUVpzbrZiR
-#define il2cpp_image_get_class_count : _ZSt11__NhBy1jhna
-#define il2cpp_image_get_class : _Znwm86__E5KFW
-#define il2cpp_string_new : _ZNKSt93__vqxXpO
-#define il2cpp_class_from_system_type : _ZThn43Obbdw30OAUbZQE6J1Bx8
+#define il2cpp_init _Znwm74__
+#define il2cpp_method_get_name _ZThn45y4cHVOdz9f
+#define il2cpp_field_get_type _ZThn15__KwhtpU
+#define il2cpp_field_get_name _ZNSt8__TJb6
+#define il2cpp_field_static_get_value _Znwm10__ziO2E
+#define il2cpp_class_from_type _ZNSt80vElMdyzdY
+#define il2cpp_class_get_namespace _ZNSt92ugnYnvvTGa
+#define il2cpp_class_get_flag: _ZNSt15__J
+#define il2cpp_class_is_valuetype _Znwm97__5GMQy
+#define il2cpp_class_is_enum _ZNKSt74TutWKSw_ofD
+#define il2cpp_class_get_parent _ZThn52nfOYnwnD
+#define il2cpp_class_get_interfaces _ZNSt11__ygpypltLqtJa
+#define il2cpp_get_corlib _ZThn38__
+#define il2cpp_class_from_name _Znwm74dSes6
+#define il2cpp_class_get_method_from_name _ZNSt28__7GdDgt3ZoVr8wpdH
+#define il2cpp_assembly_get_image _ZNKSt82__rpm
+#define il2cpp_image_get_name _ZNKSt38hUVpzbrZiR
+#define il2cpp_image_get_class_count _ZSt11__NhBy1jhna
+#define il2cpp_image_get_class _Znwm86__E5KFW
+#define il2cpp_string_new _ZNKSt93__vqxXpO
+#define il2cpp_class_from_system_type _ZThn43Obbdw30OAUbZQE6J1Bx8
 #define il2cpp_class_get_fields _Znwm2hYwfujqYskrgugh
 #define il2cpp_class_get_methods _ZNKSt61__9Iyfwcxjrd2m
 #define il2cpp_method_get_param _ZThn73TTr
