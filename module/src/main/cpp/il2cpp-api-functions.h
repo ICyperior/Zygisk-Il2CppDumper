@@ -53,3 +53,7 @@ DO_API(bool, _ZNSt45zFeGW, (Il2CppThread * thread));
 
 DO_API(const char*, _ZNKSt38hUVpzbrZiR, (const Il2CppImage * image));
 DO_API(size_t, _ZSt11__NhBy1jhna, (const Il2CppImage * image));
+
+DO_API(const Il2CppClass*, _Znwm86__E5KFW, (const Il2CppImage * image, size_t index));
+DO_API(uint32_t, _ZThn73TTr, (const MethodInfo * method));
+DO_API(const MethodInfo*, _ZNSt23__xgrJxIqr_btq, (PropertyInfo * prop));
