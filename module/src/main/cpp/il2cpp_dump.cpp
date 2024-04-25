@@ -38,44 +38,8 @@ void init_il2cpp_api(void *handle) {
 #undef DO_API
 }
 
-#define #define il2cpp_init(...) _ZThn20__(...)
-#define #define il2cpp_method_get_name(...) _ZThn45y4cHVOdz9f(...)
-#define #define il2cpp_field_get_type(...) _ZThn15__KwhtpU(...)
-#define #define il2cpp_field_get_name(...) _ZNSt8__TJb6(...)
-#define il2cpp_field_static_get_value(...) _Znwm10__ziO2E(...)
-#define il2cpp_class_from_type(...) _ZNSt80vElMdyzdY(...)
-#define il2cpp_class_get_namespace(...) _ZNSt92ugnYnvvTGa(...)
-#define il2cpp_class_get_flags(...) _ZNSt15__J(...)
-#define il2cpp_class_is_valuetype(...) _Znwm97__5GMQy(...)
-#define il2cpp_class_is_enum(...) _ZNKSt74TutWKSw_ofD(...)
-#define il2cpp_class_get_parent(...) _ZThn52nfOYnwnD(...)
-#define il2cpp_class_get_interfaces(...) _ZNSt11__ygpypltLqtJa(...)
-#define il2cpp_get_corlib(...) _ZThn38__(...)
-#define il2cpp_class_from_name(...) _Znwm74dSes6(...)
-#define il2cpp_class_get_method_from_name(...) _ZNSt28__7GdDgt3ZoVr8wpdH(...)
-#define il2cpp_assembly_get_image(...) _ZNKSt82__rpm(...)
-#define il2cpp_image_get_name(...) _ZNKSt38hUVpzbrZiR(...)
-#define il2cpp_image_get_class_count(...) _ZSt11__NhBy1jhna(...)
-#define il2cpp_string_new(...) _ZNKSt93__vqxXpO(...)
-#define il2cpp_class_from_system_type(...) _ZThn43Obbdw30OAUbZQE6J1Bx8(...)
-#define il2cpp_class_get_fields(...) _ZNSt24xoyghwnRx(...)
-#define il2cpp_class_get_methods(...) _ZNKSt61__9Iyfwcxjrd2m(...)
-#define il2cpp_method_get_param_count(...) _ZThn68__ikU5X0xBpMsrh(...)
-#define il2cpp_method_get_param_name(...) _ZNKSt627zZLdXcm78cx2(...)
-#define il2cpp_class_get_properties(...) _ZNKSt28__LOrUnxvproperties(...)
-#define il2cpp_property_get_get_method(...) _Znwm84nzkIg_E(...)
-#define il2cpp_property_get_set_method(...) _ZNSt23__xgrJxIqr_btq(...)
-#define il2cpp_property_get_name(...) _ZNSt19__EpRk0E(...)
-#define il2cpp_field_get_flags(...) _ZThn57__zhInNsR8d(...)
-#define il2cpp_field_get_offset(...) _Znwm84__FJffUr(...)
-#define il2cpp_class_get_name(...) _ZSt664ng8BcrLoHD(...)
-#define il2cpp_is_vm_thread(...) _ZNSt45zFeGW(...)
-#define il2cpp_domain_get(...) _ZSt11hcEXbjEqget(...)
-#define il2cpp_domain_get_assemblies(...) _ZNKSt41brqNPbggAzk8RuswumT(...)
-#define il2cpp_method_get_return_type(...) _Znwm64nfNbTOJU6wspZ(...)
-#define il2cpp_method_get_flags(...) _ZSt4__h5cgzIj2cj(...)
-#define il2cpp_class_get_type(...) _ZNSt72(...)
-#define il2cpp_thread_attach(...) _Znwm27vHddCzmNzdmn(...)
+
+
 
 std::string get_method_modifier(uint32_t flags) {
     std::stringstream outPut;
@@ -136,7 +100,7 @@ std::string dump_method(Il2CppClass *klass) {
     std::stringstream outPut;
     outPut << "\n\t// Methods\n";
     void *iter = nullptr;
-    while (auto method = il2cpp_class_get_methods(klass, &iter)) {
+    while (auto method = _ZNKSt61__9Iyfwcxjrd2m(klass, &iter)) {
         //TODO attribute
         if (method->methodPointer) {
             outPut << "\t// RVA: 0x";
@@ -151,19 +115,19 @@ std::string dump_method(Il2CppClass *klass) {
         }*/
         outPut << "\n\t";
         uint32_t iflags = 0;
-        auto flags = il2cpp_method_get_flags(method, &iflags);
+        auto flags = _ZSt4__h5cgzIj2cj(method, &iflags);
         outPut << get_method_modifier(flags);
         //TODO genericContainerIndex
-        auto return_type = il2cpp_method_get_return_type(method);
+        auto return_type = _Znwm64nfNbTOJU6wspZ(method);
         if (_il2cpp_type_is_byref(return_type)) {
             outPut << "ref ";
         }
-        auto return_class = il2cpp_class_from_type(return_type);
-        outPut << il2cpp_class_get_name(return_class) << " " << il2cpp_method_get_name(method)
+        auto return_class = _ZNSt80vElMdyzdY(return_type);
+        outPut << _ZSt664ng8BcrLoHD(return_class) << " " << _ZThn45y4cHVOdz9f(method)
                << "(";
-        auto param_count = il2cpp_method_get_param_count(method);
+        auto param_count = _ZThn68__ikU5X0xBpMsrh(method);
         for (int i = 0; i < param_count; ++i) {
-            auto param = il2cpp_method_get_param(method, i);
+            auto param = _ZThn73TTr(method, i);
             auto attrs = param->attrs;
             if (_il2cpp_type_is_byref(param)) {
                 if (attrs & PARAM_ATTRIBUTE_OUT && !(attrs & PARAM_ATTRIBUTE_IN)) {
@@ -181,9 +145,9 @@ std::string dump_method(Il2CppClass *klass) {
                     outPut << "[Out] ";
                 }
             }
-            auto parameter_class = il2cpp_class_from_type(param);
-            outPut << il2cpp_class_get_name(parameter_class) << " "
-                   << il2cpp_method_get_param_name(method, i);
+            auto parameter_class = _ZNSt80vElMdyzdY(param);
+            outPut << _ZSt664ng8BcrLoHD(parameter_class) << " "
+                   << _ZNKSt627zZLdXcm78cx2(method, i);
             outPut << ", ";
         }
         if (param_count > 0) {
@@ -199,25 +163,25 @@ std::string dump_property(Il2CppClass *klass) {
     std::stringstream outPut;
     outPut << "\n\t// Properties\n";
     void *iter = nullptr;
-    while (auto prop_const = il2cpp_class_get_properties(klass, &iter)) {
+    while (auto prop_const = _ZNKSt28__LOrUnxvproperties(klass, &iter)) {
         //TODO attribute
         auto prop = const_cast<PropertyInfo *>(prop_const);
-        auto get = il2cpp_property_get_get_method(prop);
-        auto set = il2cpp_property_get_set_method(prop);
-        auto prop_name = il2cpp_property_get_name(prop);
+        auto get = _Znwm84nzkIg_E(prop);
+        auto set = _ZNSt23__xgrJxIqr_btq(prop);
+        auto prop_name = _ZNSt23__xgrJxIqr_btq(prop);
         outPut << "\t";
         Il2CppClass *prop_class = nullptr;
         uint32_t iflags = 0;
         if (get) {
-            outPut << get_method_modifier(il2cpp_method_get_flags(get, &iflags));
-            prop_class = il2cpp_class_from_type(il2cpp_method_get_return_type(get));
+            outPut << get_method_modifier(_ZSt4__h5cgzIj2cj(get, &iflags));
+            prop_class = _ZNSt80vElMdyzdY(_Znwm64nfNbTOJU6wspZ(get));
         } else if (set) {
-            outPut << get_method_modifier(il2cpp_method_get_flags(set, &iflags));
-            auto param = il2cpp_method_get_param(set, 0);
-            prop_class = il2cpp_class_from_type(param);
+            outPut << get_method_modifier(_ZSt4__h5cgzIj2cj(set, &iflags));
+            auto param = _ZThn73TTr(set, 0);
+            prop_class = _ZNSt80vElMdyzdY(param);
         }
         if (prop_class) {
-            outPut << il2cpp_class_get_name(prop_class) << " " << prop_name << " { ";
+            outPut << _ZSt664ng8BcrLoHD(prop_class) << " " << prop_name << " { ";
             if (get) {
                 outPut << "get; ";
             }
@@ -237,12 +201,12 @@ std::string dump_property(Il2CppClass *klass) {
 std::string dump_field(Il2CppClass *klass) {
     std::stringstream outPut;
     outPut << "\n\t// Fields\n";
-    auto is_enum = il2cpp_class_is_enum(klass);
+    auto is_enum = _ZNKSt74TutWKSw_ofD(klass);
     void *iter = nullptr;
-    while (auto field = il2cpp_class_get_fields(klass, &iter)) {
+    while (auto field = _ZNSt24xoyghwnRx(klass, &iter)) {
         //TODO attribute
         outPut << "\t";
-        auto attrs = il2cpp_field_get_flags(field);
+        auto attrs = _ZThn57__zhInNsR8d(field);
         auto access = attrs & FIELD_ATTRIBUTE_FIELD_ACCESS_MASK;
         switch (access) {
             case FIELD_ATTRIBUTE_PRIVATE:
@@ -272,31 +236,31 @@ std::string dump_field(Il2CppClass *klass) {
                 outPut << "readonly ";
             }
         }
-        auto field_type = il2cpp_field_get_type(field);
-        auto field_class = il2cpp_class_from_type(field_type);
-        outPut << il2cpp_class_get_name(field_class) << " " << il2cpp_field_get_name(field);
+        auto field_type = _ZThn15__KwhtpU(field);
+        auto field_class = _ZNSt80vElMdyzdY(field_type);
+        outPut << _ZSt664ng8BcrLoHD(field_class) << " " << _ZNSt8__TJb6(field);
         //TODO 获取构造函数初始化后的字段值
         if (attrs & FIELD_ATTRIBUTE_LITERAL && is_enum) {
             uint64_t val = 0;
-            il2cpp_field_static_get_value(field, &val);
+            _Znwm10__ziO2E(field, &val);
             outPut << " = " << std::dec << val;
         }
-        outPut << "; // 0x" << std::hex << il2cpp_field_get_offset(field) << "\n";
+        outPut << "; // 0x" << std::hex << _Znwm84__FJffUr(field) << "\n";
     }
     return outPut.str();
 }
 
 std::string dump_type(const Il2CppType *type) {
     std::stringstream outPut;
-    auto *klass = il2cpp_class_from_type(type);
-    outPut << "\n// Namespace: " << il2cpp_class_get_namespace(klass) << "\n";
-    auto flags = il2cpp_class_get_flags(klass);
+    auto *klass = _ZNSt80vElMdyzdY(type);
+    outPut << "\n// Namespace: " << _ZNSt92ugnYnvvTGa(klass) << "\n";
+    auto flags = _ZNSt15__J(klass);
     if (flags & TYPE_ATTRIBUTE_SERIALIZABLE) {
         outPut << "[Serializable]\n";
     }
     //TODO attribute
-    auto is_valuetype = il2cpp_class_is_valuetype(klass);
-    auto is_enum = il2cpp_class_is_enum(klass);
+    auto is_valuetype = _Znwm97__5GMQy(klass);
+    auto is_enum = _ZNKSt74TutWKSw_ofD(klass);
     auto visibility = flags & TYPE_ATTRIBUTE_VISIBILITY_MASK;
     switch (visibility) {
         case TYPE_ATTRIBUTE_PUBLIC:
@@ -334,18 +298,18 @@ std::string dump_type(const Il2CppType *type) {
     } else {
         outPut << "class ";
     }
-    outPut << il2cpp_class_get_name(klass); //TODO genericContainerIndex
+    outPut << _ZSt664ng8BcrLoHD(klass); //TODO genericContainerIndex
     std::vector<std::string> extends;
-    auto parent = il2cpp_class_get_parent(klass);
+    auto parent = _ZThn52nfOYnwnD(klass);
     if (!is_valuetype && !is_enum && parent) {
-        auto parent_type = il2cpp_class_get_type(parent);
+        auto parent_type = _ZNSt72(parent);
         if (parent_type->type != IL2CPP_TYPE_OBJECT) {
-            extends.emplace_back(il2cpp_class_get_name(parent));
+            extends.emplace_back(_ZSt664ng8BcrLoHD(parent));
         }
     }
     void *iter = nullptr;
-    while (auto itf = il2cpp_class_get_interfaces(klass, &iter)) {
-        extends.emplace_back(il2cpp_class_get_name(itf));
+    while (auto itf = _ZNSt11__ygpypltLqtJa(klass, &iter)) {
+        extends.emplace_back(_ZSt664ng8BcrLoHD(itf));
     }
     if (!extends.empty()) {
         outPut << " : " << extends[0];
@@ -365,9 +329,9 @@ std::string dump_type(const Il2CppType *type) {
 void il2cpp_api_init(void *handle) {
     LOGI("il2cpp_handle: %p", handle);
     init_il2cpp_api(handle);
-    if (il2cpp_domain_get_assemblies) {
+    if (_ZNKSt41brqNPbggAzk8RuswumT) {
         Dl_info dlInfo;
-        if (dladdr((void *) il2cpp_domain_get_assemblies, &dlInfo)) {
+        if (dladdr((void *) _ZNKSt41brqNPbggAzk8RuswumT, &dlInfo)) {
             il2cpp_base = reinterpret_cast<uint64_t>(dlInfo.dli_fbase);
         }
         LOGI("il2cpp_base: %" PRIx64"", il2cpp_base);
@@ -375,36 +339,36 @@ void il2cpp_api_init(void *handle) {
         LOGE("Failed to initialize il2cpp api.");
         return;
     }
-    while (!il2cpp_is_vm_thread(nullptr)) {
+    while (!_ZNSt45zFeGW(nullptr)) {
         LOGI("Waiting for il2cpp_init...");
         sleep(1);
     }
-    auto domain = il2cpp_domain_get();
-    il2cpp_thread_attach(domain);
+    auto domain = _ZSt11hcEXbjEqget();
+    _Znwm27vHddCzmNzdmn(domain);
 }
 
 void il2cpp_dump(const char *outDir) {
     LOGI("dumping...");
     size_t size;
-    auto domain = il2cpp_domain_get();
-    auto assemblies = il2cpp_domain_get_assemblies(domain, &size);
+    auto domain = _ZSt11hcEXbjEqget();
+    auto assemblies = _ZNKSt41brqNPbggAzk8RuswumT(domain, &size);
     std::stringstream imageOutput;
     for (int i = 0; i < size; ++i) {
-        auto image = il2cpp_assembly_get_image(assemblies[i]);
-        imageOutput << "// Image " << i << ": " << il2cpp_image_get_name(image) << "\n";
+        auto image = _ZNKSt82__rpm(assemblies[i]);
+        imageOutput << "// Image " << i << ": " << _ZNKSt38hUVpzbrZiR(image) << "\n";
     }
     std::vector<std::string> outPuts;
-    if (il2cpp_image_get_class) {
+    if (_Znwm86__E5KFW) {
         LOGI("Version greater than 2018.3");
         //使用il2cpp_image_get_class
         for (int i = 0; i < size; ++i) {
-            auto image = il2cpp_assembly_get_image(assemblies[i]);
+            auto image = _ZNKSt82__rpm(assemblies[i]);
             std::stringstream imageStr;
-            imageStr << "\n// Dll : " << il2cpp_image_get_name(image);
-            auto classCount = il2cpp_image_get_class_count(image);
+            imageStr << "\n// Dll : " << _ZNKSt38hUVpzbrZiR(image);
+            auto classCount = _ZSt11__NhBy1jhna(image);
             for (int j = 0; j < classCount; ++j) {
-                auto klass = il2cpp_image_get_class(image, j);
-                auto type = il2cpp_class_get_type(const_cast<Il2CppClass *>(klass));
+                auto klass = _Znwm86__E5KFW(image, j);
+                auto type = _ZNSt72(const_cast<Il2CppClass *>(klass));
                 //LOGD("type name : %s", il2cpp_type_get_name(type));
                 auto outPut = imageStr.str() + dump_type(type);
                 outPuts.push_back(outPut);
@@ -413,10 +377,10 @@ void il2cpp_dump(const char *outDir) {
     } else {
         LOGI("Version less than 2018.3");
         //使用反射
-        auto corlib = il2cpp_get_corlib();
-        auto assemblyClass = il2cpp_class_from_name(corlib, "System.Reflection", "Assembly");
-        auto assemblyLoad = il2cpp_class_get_method_from_name(assemblyClass, "Load", 1);
-        auto assemblyGetTypes = il2cpp_class_get_method_from_name(assemblyClass, "GetTypes", 0);
+        auto corlib = _ZThn38__();
+        auto assemblyClass = _Znwm74dSes6(corlib, "System.Reflection", "Assembly");
+        auto assemblyLoad = _ZNSt28__7GdDgt3ZoVr8wpdH(assemblyClass, "Load", 1);
+        auto assemblyGetTypes = _ZNSt28__7GdDgt3ZoVr8wpdH(assemblyClass, "GetTypes", 0);
         if (assemblyLoad && assemblyLoad->methodPointer) {
             LOGI("Assembly::Load: %p", assemblyLoad->methodPointer);
         } else {
@@ -432,15 +396,15 @@ void il2cpp_dump(const char *outDir) {
         typedef void *(*Assembly_Load_ftn)(void *, Il2CppString *, void *);
         typedef Il2CppArray *(*Assembly_GetTypes_ftn)(void *, void *);
         for (int i = 0; i < size; ++i) {
-            auto image = il2cpp_assembly_get_image(assemblies[i]);
+            auto image = _ZNKSt82__rpm(assemblies[i]);
             std::stringstream imageStr;
-            auto image_name = il2cpp_image_get_name(image);
+            auto image_name = _ZNKSt38hUVpzbrZiR(image);
             imageStr << "\n// Dll : " << image_name;
             //LOGD("image name : %s", image->name);
             auto imageName = std::string(image_name);
             auto pos = imageName.rfind('.');
             auto imageNameNoExt = imageName.substr(0, pos);
-            auto assemblyFileName = il2cpp_string_new(imageNameNoExt.data());
+            auto assemblyFileName = _ZNKSt93__vqxXpO(imageNameNoExt.data());
             auto reflectionAssembly = ((Assembly_Load_ftn) assemblyLoad->methodPointer)(nullptr,
                                                                                         assemblyFileName,
                                                                                         nullptr);
@@ -448,8 +412,8 @@ void il2cpp_dump(const char *outDir) {
                     reflectionAssembly, nullptr);
             auto items = reflectionTypes->vector;
             for (int j = 0; j < reflectionTypes->max_length; ++j) {
-                auto klass = il2cpp_class_from_system_type((Il2CppReflectionType *) items[j]);
-                auto type = il2cpp_class_get_type(klass);
+                auto klass = _ZThn43Obbdw30OAUbZQE6J1Bx8((Il2CppReflectionType *) items[j]);
+                auto type = _ZNSt72(klass);
                 //LOGD("type name : %s", il2cpp_type_get_name(type));
                 auto outPut = imageStr.str() + dump_type(type);
                 outPuts.push_back(outPut);
