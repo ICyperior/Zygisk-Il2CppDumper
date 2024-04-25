@@ -55,5 +55,6 @@ DO_API(const char*, _ZNKSt38hUVpzbrZiR, (const Il2CppImage * image));
 DO_API(size_t, _ZSt11__NhBy1jhna, (const Il2CppImage * image));
 
 DO_API(const Il2CppClass*, _Znwm86__E5KFW, (const Il2CppImage * image, size_t index));
-DO_API(uint32_t, _ZThn73TTr, (const MethodInfo * method));
-DO_API(const MethodInfo*, _ZNSt23__xgrJxIqr_btq, (PropertyInfo * prop));
+DO_API(uint32_t, _ZThn68__ikU5X0xBpMsrh, (const MethodInfo * method));
+DO_API(const Il2CppType*, _ZThn73TTr, (const MethodInfo * method, uint32_t index));
+DO_API(Il2CppClass*, _ZThn43Obbdw30OAUbZQE6J1Bx8, (Il2CppReflectionType * type));
