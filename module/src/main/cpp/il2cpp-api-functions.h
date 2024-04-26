@@ -50,6 +50,7 @@ DO_API(const char*, _ZNSt73__Xlb7iFn_WW4, (PropertyInfo * prop));
 DO_API(Il2CppString*, _ZNKSt48__, (const char* str));
 DO_API(Il2CppThread*, _Znwm80__, (Il2CppDomain * domain));
 DO_API(bool, _ZNKSt99r1UvwucW, (Il2CppThread * thread));
+DO_API(const MethodInfo*, _ZNSt77__Qd8y2JOuiwCcqs8sAv, (PropertyInfo * prop));
 
 DO_API(const char*, _ZThn92A, (const Il2CppImage * image));
 DO_API(size_t, _ZSt64__8Ckl_khqkcwnnWD, (const Il2CppImage * image));
