@@ -177,7 +177,7 @@ std::string dump_property(Il2CppClass *klass) {
             prop_class = _ZNSt35o1CBlzvh8nfBs(_Znwm19__HdyYsP7XhR38TH8vV(get));
         } else if (set) {
             outPut << get_method_modifier(_ZSt58__Atvw5Jh5mfEJss(set, &iflags));
-            auto param = __Znwm28dg8Lggk(set, 0);
+            auto param = _Znwm28dg8Lggk(set, 0);
             prop_class = _ZNSt35o1CBlzvh8nfBs(param);
         }
         if (prop_class) {
@@ -344,7 +344,7 @@ void il2cpp_api_init(void *handle) {
         sleep(1);
     }
     auto domain = _Znwm6__tzZhqOget();
-    _Znwm27vHddCzmNzdmn(domain);
+    _Znwm80__(domain);
 }
 
 void il2cpp_dump(const char *outDir) {
