@@ -13,7 +13,7 @@ DO_API(const Il2CppImage*, _ZNKSt37__lKDz3nh1, (const Il2CppAssembly * assembly)
 // class
 DO_API(Il2CppClass*, _ZSt29wfUfejwdc_, (const Il2CppImage * image, const char* namespaze, const char *name));
 DO_API(FieldInfo*, _ZNSt78__RJNvoxmUHzV, (Il2CppClass * klass, void* *iter));
-DO_API(Il2CppClass*, _ZNSt11__ygpypltLqtJa, (Il2CppClass * klass, void* *iter));
+DO_API(Il2CppClass*, _ZNKSt65__qB6numrNAomlV9U8, (Il2CppClass * klass, void* *iter));
 DO_API(const PropertyInfo*, _ZSt23x8ne0AwIOPQproperties, (Il2CppClass * klass, void* *iter));
 DO_API(const MethodInfo*, _ZThn16__, (Il2CppClass * klass, void* *iter));
 DO_API(const MethodInfo*, _ZNSt81__v2wrLut2xj2TpYLBHCsaX7o, (Il2CppClass * klass, const char* name, int argsCount));
@@ -44,13 +44,12 @@ DO_API(uint32_t, _ZSt58__Atvw5Jh5mfEJss, (const MethodInfo * method, uint32_t * 
 DO_API(const char*, _ZNKSt16vtjAlYcohxLgUxwfolA, (const MethodInfo * method, uint32_t index));
 
 DO_API(const MethodInfo*, _Znwm38hUBwna2pmcwTnf, (PropertyInfo * prop));
-DO_API(const MethodInfo*, _Znwm38hUBwna2pmcwTnf, (PropertyInfo * prop));
 DO_API(const char*, _ZNSt73__Xlb7iFn_WW4, (PropertyInfo * prop));
+DO_API(const MethodInfo*, _ZNSt77__Qd8y2JOuiwCcqs8sAv, (PropertyInfo * prop));
 
 DO_API(Il2CppString*, _ZNKSt48__, (const char* str));
 DO_API(Il2CppThread*, _Znwm80__, (Il2CppDomain * domain));
 DO_API(bool, _ZNKSt99r1UvwucW, (Il2CppThread * thread));
-DO_API(const MethodInfo*, _ZNSt77__Qd8y2JOuiwCcqs8sAv, (PropertyInfo * prop));
 
 DO_API(const char*, _ZThn92A, (const Il2CppImage * image));
 DO_API(size_t, _ZSt64__8Ckl_khqkcwnnWD, (const Il2CppImage * image));
