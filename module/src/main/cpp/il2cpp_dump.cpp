@@ -127,7 +127,7 @@ std::string dump_method(Il2CppClass *klass) {
                << "(";
         auto param_count = _ZThn23(method);
         for (int i = 0; i < param_count; ++i) {
-            auto param = __Znwm28dg8Lggk(method, i);
+            auto param = _Znwm28dg8Lggk(method, i);
             auto attrs = param->attrs;
             if (_il2cpp_type_is_byref(param)) {
                 if (attrs & PARAM_ATTRIBUTE_OUT && !(attrs & PARAM_ATTRIBUTE_IN)) {
@@ -302,7 +302,7 @@ std::string dump_type(const Il2CppType *type) {
     std::vector<std::string> extends;
     auto parent = _ZThn7hczNSxmGMnngs(klass);
     if (!is_valuetype && !is_enum && parent) {
-        auto parent_type = _ZNSt72(parent);
+        auto parent_type = _ZNSt27gvEl(parent);
         if (parent_type->type != IL2CPP_TYPE_OBJECT) {
             extends.emplace_back(_ZSt20r(parent));
         }
@@ -368,7 +368,7 @@ void il2cpp_dump(const char *outDir) {
             auto classCount = _ZSt64__8Ckl_khqkcwnnWD(image);
             for (int j = 0; j < classCount; ++j) {
                 auto klass = _ZSt40XtwuwTJdCmfi(image, j);
-                auto type = _ZNSt72(const_cast<Il2CppClass *>(klass));
+                auto type = _ZNSt27gvEl(const_cast<Il2CppClass *>(klass));
                 //LOGD("type name : %s", il2cpp_type_get_name(type));
                 auto outPut = imageStr.str() + dump_type(type);
                 outPuts.push_back(outPut);
@@ -413,7 +413,7 @@ void il2cpp_dump(const char *outDir) {
             auto items = reflectionTypes->vector;
             for (int j = 0; j < reflectionTypes->max_length; ++j) {
                 auto klass = _Znwm96__9w((Il2CppReflectionType *) items[j]);
-                auto type = _ZNSt72(klass);
+                auto type = _ZNSt27gvEl(klass);
                 //LOGD("type name : %s", il2cpp_type_get_name(type));
                 auto outPut = imageStr.str() + dump_type(type);
                 outPuts.push_back(outPut);
