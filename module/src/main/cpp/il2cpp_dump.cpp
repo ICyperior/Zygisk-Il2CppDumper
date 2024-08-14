@@ -124,7 +124,7 @@ void dyn_init_il2cpp_api_functions(void* handle) {
         LOGE("Error handle");
     }
 
-    dl_iterate_phdr(callback, &handle);
+    xdl_iterate_phdr(callback, handle);
 
     // Localiser UnityAdsEngineSetDidFinishCallback
     auto it = std::find_if(exported_functions.begin(), exported_functions.end(),
