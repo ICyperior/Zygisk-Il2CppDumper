@@ -149,7 +149,7 @@ void dyn_init_il2cpp_api_functions() {
         il2cpp_image_get_class_count = (size_t (*)(const Il2CppImage *)) (func_it + 217)->address;
         il2cpp_string_new = (Il2CppString* (*)(const char*)) (func_it + 181)->address;
         il2cpp_class_from_system_type = (Il2CppClass* (*)(Il2CppReflectionType *)) (func_it + 27)->address;
-        il2cpp_class_get_fields = (FieldInfo* (*)Il2CppClass *, void* *) (func_it + 38)->address;
+        il2cpp_class_get_fields = (FieldInfo* (*)(Il2CppClass *, void* *)) (func_it + 38)->address;
         il2cpp_class_get_methods = (const MethodInfo* (*)(Il2CppClass *, void* *)) (func_it + 44)->address;
         il2cpp_method_get_param = (const Il2CppType* (*)(const MethodInfo *, uint32_t)) (func_it + 141)->address;
         il2cpp_method_get_param_count = (uint32_t (*)(const MethodInfo *)) (func_it + 140)->address;
