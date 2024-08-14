@@ -39,7 +39,7 @@ Il2CppClass* (*il2cpp_class_from_name)(const Il2CppImage*, const char*, const ch
 const MethodInfo* (*il2cpp_class_get_method_from_name)(Il2CppClass*, const char*, int);
 const Il2CppImage* (*il2cpp_assembly_get_image)(const Il2CppAssembly*);
 const char* (*il2cpp_image_get_name)(const Il2CppImage*);
-const Il2CppClass* (*il2cpp_image_get_class)(const Il2CppImage * image, size_t index);
+const Il2CppClass* (*il2cpp_image_get_class)(const Il2CppImage *, size_t);
 size_t (*il2cpp_image_get_class_count)(const Il2CppImage*);
 Il2CppString* (*il2cpp_string_new)(const char*);
 Il2CppClass* (*il2cpp_class_from_system_type)(Il2CppReflectionType*);
@@ -147,7 +147,7 @@ void dyn_init_il2cpp_api_functions(void* handle) {
         il2cpp_class_get_method_from_name = (const MethodInfo* (*)(Il2CppClass *, const char*, int)) (func_it + 45)->address;
         il2cpp_assembly_get_image = (const Il2CppImage* (*)(const Il2CppAssembly *)) (func_it + 25)->address;
         il2cpp_image_get_name = (const char* (*)(const Il2CppImage *)) (func_it + 214)->address;
-        il2cpp_image_get_class = (const Il2CppClass* (*)(const Il2CppImage * image, size_t index)) (func_it + 218)->address;
+        il2cpp_image_get_class = (const Il2CppClass* (*)(const Il2CppImage *, size_t)) (func_it + 218)->address;
         il2cpp_image_get_class_count = (size_t (*)(const Il2CppImage *)) (func_it + 217)->address;
         il2cpp_string_new = (Il2CppString* (*)(const char*)) (func_it + 181)->address;
         il2cpp_class_from_system_type = (Il2CppClass* (*)(Il2CppReflectionType *)) (func_it + 27)->address;
