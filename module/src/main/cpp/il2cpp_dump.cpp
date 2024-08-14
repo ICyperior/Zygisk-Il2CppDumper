@@ -25,7 +25,7 @@ int (*il2cpp_init_utf16)(const Il2CppChar*);
 void (*il2cpp_shutdown)();
 const char* (*il2cpp_method_get_name)(const MethodInfo*);
 const Il2CppType* (*il2cpp_field_get_type)(FieldInfo*);
-const char* (*il2cpp_field_get_name)();
+const char* (*il2cpp_field_get_name)(FieldInfo *);
 void (*il2cpp_field_static_get_value)(FieldInfo*, void*);
 Il2CppClass* (*il2cpp_class_from_type)(const Il2CppType*);
 const char* (*il2cpp_class_get_namespace)(Il2CppClass*);
@@ -133,7 +133,7 @@ void dyn_init_il2cpp_api_functions() {
         il2cpp_shutdown = (void (*)()) (func_it + 3)->address;
         il2cpp_method_get_name = (const char* (*) (const MethodInfo * method)) (func_it + 136)->address;
         il2cpp_field_get_type = (const Il2CppType * (*) (FieldInfo *)) (func_it + 88)->address;
-        il2cpp_field_get_name = (const char* (*) ()) (func_it + 84)->address;
+        il2cpp_field_get_name = (const char* (*) (FieldInfo *)) (func_it + 84)->address;
         il2cpp_field_static_get_value = (void (*)(FieldInfo *, void *)) (func_it + 94)->address;
         il2cpp_class_from_type = (Il2CppClass* (*)(const Il2CppType *)) (func_it + 58)->address;
         il2cpp_class_get_namespace = (const char* (*)(Il2CppClass *)) (func_it + 47)->address;
