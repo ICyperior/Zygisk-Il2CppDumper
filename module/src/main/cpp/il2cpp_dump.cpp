@@ -1,3 +1,4 @@
+
 //
 // Created by Perfare on 2020/7/4.
 //
@@ -74,6 +75,7 @@ std::vector<ExportedFunction> exported_functions;
 
 // Callback pour `dl_iterate_phdr` pour remplir la liste des fonctions exportées
 int callback(struct dl_phdr_info *info, size_t size, void *data) {
+	
     auto *lib_handle = static_cast<void**>(data);
 
     if (*lib_handle == nullptr) {
@@ -81,6 +83,7 @@ int callback(struct dl_phdr_info *info, size_t size, void *data) {
     }
 
     if (*lib_handle) {
+		LOGI("Callback called!");
         // Essayez d'énumérer les symboles exportés
         for (size_t i = 0; i < info->dlpi_phnum; ++i) {
             const ElfW(Phdr) &phdr = info->dlpi_phdr[i];
@@ -114,6 +117,9 @@ void dyn_init_il2cpp_api_functions(void* handle) {
     // Mettre dl_iterate_phdr ou xdl_iterate_phdr avec le callback
     // Supposons que vous ayez déjà la liste des fonctions exportées
     // Vous pouvez les trier ou les filtrer si nécessaire.
+	
+	// Maybe adding auto libil2cpp.so handle generation
+	
     if (!handle) {
         LOGE("Error handle");
     }
@@ -123,10 +129,12 @@ void dyn_init_il2cpp_api_functions(void* handle) {
     // Localiser UnityAdsEngineSetDidFinishCallback
     auto it = std::find_if(exported_functions.begin(), exported_functions.end(),
                            [](const ExportedFunction& func) {
+							   LOGI("%s", func.name.c_str())								// DEBUG LOG FOR FUNCTION NAME ITERATION
                                return func.name == "UnityAdsEngineSetDidFinishCallback";
                            });
 
     if (it != exported_functions.end()) {
+		LOGI("func_it enum finished and correct")
         // Associer les fonctions selon l'ordre que vous avez fourni
         auto func_it = it; // Le suivant est il2cpp_init
 
@@ -176,6 +184,7 @@ void dyn_init_il2cpp_api_functions(void* handle) {
 
     } else {
         // TODO: Add error here
+		LOGI("Can't find UnityAdsEngineSetDidFinishCallback.")
     }
 }
 
