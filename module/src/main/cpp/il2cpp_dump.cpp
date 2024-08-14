@@ -97,8 +97,8 @@ int callback(struct dl_phdr_info *info, size_t size, void *data) {
                                 ExportedFunction func;
                                 func.name = &strtab[symtab[j].st_name];
                                 func.address = (void*)(info->dlpi_addr + symtab[j].st_value);
-                                LOGI(func.name);
-                                LOGI(func.address);
+                                LOGI((const char *)func.name);
+                                LOGI((const char *)func.address);
                                 exported_functions.push_back(func);
                             }
                         }
