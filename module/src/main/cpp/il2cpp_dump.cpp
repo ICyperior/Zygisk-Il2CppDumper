@@ -18,6 +18,49 @@
 #include "il2cpp-class.h"
 #include <link.h>
 
+int (*il2cpp_init)(const char*);
+int (*il2cpp_init_utf16)(const Il2CppChar*);
+void (*il2cpp_shutdown)();
+const char* (*il2cpp_method_get_name)(const MethodInfo*);
+const Il2CppType* (*il2cpp_field_get_type)(FieldInfo*);
+const char* (*il2cpp_field_get_name)();
+void (*il2cpp_field_static_get_value)(FieldInfo*, void*);
+Il2CppClass* (*il2cpp_class_from_type)(const Il2CppType*);
+const char* (*il2cpp_class_get_namespace)(Il2CppClass*);
+int (*il2cpp_class_get_flags)(const Il2CppClass*);
+bool (*il2cpp_class_is_valuetype)(const Il2CppClass*);
+bool (*il2cpp_class_is_enum)(const Il2CppClass*);
+Il2CppClass* (*il2cpp_class_get_parent)(Il2CppClass*);
+Il2CppClass* (*il2cpp_class_get_interfaces)(Il2CppClass*, void**);
+const Il2CppImage* (*il2cpp_get_corlib)();
+Il2CppClass* (*il2cpp_class_from_name)(const Il2CppImage*, const char*, const char*);
+const MethodInfo* (*il2cpp_class_get_method_from_name)(Il2CppClass*, const char*, int);
+const Il2CppImage* (*il2cpp_assembly_get_image)(const Il2CppAssembly*);
+const char* (*il2cpp_image_get_name)(const Il2CppImage*);
+size_t (*il2cpp_image_get_class_count)(const Il2CppImage*);
+Il2CppString* (*il2cpp_string_new)(const char*);
+Il2CppClass* (*il2cpp_class_from_system_type)(Il2CppReflectionType*);
+FieldInfo* (*il2cpp_class_get_fields)(Il2CppClass*, void**);
+const MethodInfo* (*il2cpp_class_get_methods)(Il2CppClass*, void**);
+const Il2CppType* (*il2cpp_method_get_param)(const MethodInfo*, uint32_t);
+uint32_t (*il2cpp_method_get_param_count)(const MethodInfo*);
+const char* (*il2cpp_method_get_param_name)(const MethodInfo*, uint32_t);
+const PropertyInfo* (*il2cpp_class_get_properties)(Il2CppClass*, void**);
+const MethodInfo* (*il2cpp_property_get_get_method)(PropertyInfo*);
+const MethodInfo* (*il2cpp_property_get_set_method)(PropertyInfo*);
+const char* (*il2cpp_property_get_name)(PropertyInfo*);
+int (*il2cpp_field_get_flags)(FieldInfo*);
+size_t (*il2cpp_field_get_offset)(FieldInfo*);
+const char* (*il2cpp_class_get_name)(Il2CppClass*);
+bool (*il2cpp_is_vm_thread)(Il2CppThread*);
+Il2CppDomain* (*il2cpp_domain_get)();
+const Il2CppAssembly** (*il2cpp_domain_get_assemblies)(const Il2CppDomain*, size_t*);
+const Il2CppType* (*il2cpp_method_get_return_type)(const MethodInfo*);
+uint32_t (*il2cpp_method_get_flags)(const MethodInfo*, uint32_t*);
+const Il2CppType* (*il2cpp_class_get_type)(Il2CppClass*);
+Il2CppThread* (*il2cpp_thread_attach)(Il2CppDomain*);
+bool (*il2cpp_type_is_byref)(const Il2CppType*);
+
 // Exemple de structure pour stocker les informations sur les fonctions
 struct ExportedFunction {
     std::string name;
