@@ -459,6 +459,9 @@ std::string dump_type(const Il2CppType *type) {
 }
 
 void il2cpp_api_init(void *handle) {
+    
+    dyn_init_il2cpp_api_functions();
+    
     LOGI("il2cpp_handle: %p", handle);
     init_il2cpp_api(handle);
     if (il2cpp_domain_get_assemblies) {
@@ -482,8 +485,6 @@ void il2cpp_api_init(void *handle) {
 void il2cpp_dump(const char *outDir) {
     LOGI("dumping...");
 
-    dyn_init_il2cpp_api_functions();
-    
     size_t size;
     auto domain = il2cpp_domain_get();
     auto assemblies = il2cpp_domain_get_assemblies(domain, &size);
