@@ -18,6 +18,8 @@
 #include "il2cpp-class.h"
 #include <link.h>
 
+static uint64_t il2cpp_base = 0;
+
 int (*il2cpp_init)(const char*);
 int (*il2cpp_init_utf16)(const Il2CppChar*);
 void (*il2cpp_shutdown)();
