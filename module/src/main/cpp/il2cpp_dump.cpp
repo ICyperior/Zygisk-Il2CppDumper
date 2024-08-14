@@ -129,12 +129,12 @@ void dyn_init_il2cpp_api_functions(void* handle) {
     // Localiser UnityAdsEngineSetDidFinishCallback
     auto it = std::find_if(exported_functions.begin(), exported_functions.end(),
                            [](const ExportedFunction& func) {
-							   LOGI("%s", func.name.c_str())								// DEBUG LOG FOR FUNCTION NAME ITERATION
+							   LOGI("%s", func.name.c_str());								// DEBUG LOG FOR FUNCTION NAME ITERATION
                                return func.name == "UnityAdsEngineSetDidFinishCallback";
                            });
 
     if (it != exported_functions.end()) {
-		LOGI("func_it enum finished and correct")
+		LOGI("func_it enum finished and correct");
         // Associer les fonctions selon l'ordre que vous avez fourni
         auto func_it = it; // Le suivant est il2cpp_init
 
@@ -184,7 +184,7 @@ void dyn_init_il2cpp_api_functions(void* handle) {
 
     } else {
         // TODO: Add error here
-		LOGI("Can't find UnityAdsEngineSetDidFinishCallback.")
+		LOGI("Can't find UnityAdsEngineSetDidFinishCallback.");
     }
 }
 
